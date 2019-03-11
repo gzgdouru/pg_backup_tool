@@ -6,14 +6,11 @@ _data = json.load(open(settings.CONFIG_FILE, "r"))
 
 
 def get_host():
-    for host in _data["HOST"]:
-        yield host
+    yield from _data["HOST"]
 
 
 def get_db():
-    for db in _data["DB"]:
-        yield db
-
+    yield from _data["DB"]
 
 if __name__ == "__main__":
     print(list(get_db()))
